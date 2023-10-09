@@ -57,7 +57,25 @@ ValidateForm.prototype.getPrefixFromPhoneNumber = function () {
 ValidateForm.prototype.getPhoneNumber = function () {
         console.log(this.phoneNumber)
     }
-    
+
+ValidateForm.prototype.isNumberComplete = function () {
+    // function verifies if number is complete
+    if (this.phoneNumber.includes('+')) {
+        let slice = this.phoneNumber.slice(4);
+        if (slice.length === 10) {
+            return true
+        } else {
+            return false
+        }
+    } else{
+        if (this.getPhoneNumber.length === 11) {
+            return true
+        } else {
+            return false
+        }
+    }
+}    
+
 ValidateForm.prototype.isMtnNumber = function () {
         // this function check if this.phoneNumber is an MTN number by checking
         // against the prefixes
@@ -70,5 +88,34 @@ ValidateForm.prototype.isMtnNumber = function () {
     }
     
 ValidateForm.prototype.isGloNumber = function () {
-    
-    }
+      // this function check if this.phoneNumber is a glo number by checking
+        // against the prefixes
+        const gloPrefixes = this.getPrefixes().glo;
+        let numberPrefix = this.getPrefixFromPhoneNumber(this.phoneNumber);
+        if (gloPrefixes.includes(numberPrefix)) {
+            return true
+        };
+        return false
+    }   
+
+ValidateForm.prototype.isNineMobileNumber = function () {
+      // this function check if this.phoneNumber is a nine mobile number by checking
+        // against the prefixes
+        const nineMobilePrefixes = this.getPrefixes().nineMobile;
+        let numberPrefix = this.getPrefixFromPhoneNumber(this.phoneNumber);
+        if (nineMobilePrefixes.includes(numberPrefix)) {
+            return true
+        };
+        return false
+    }   
+
+ValidateForm.prototype.isAirtelNumber = function () {
+      // this function check if this.phoneNumber is an airtel number by checking
+        // against the prefixes
+        const gloPrefixes = this.getPrefixes().airtel;
+        let numberPrefix = this.getPrefixFromPhoneNumber(this.phoneNumber);
+        if (airtelPrefixes.includes(numberPrefix)) {
+            return true
+        };
+        return false
+    }       
