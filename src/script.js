@@ -1,5 +1,4 @@
 // 
-
 export function ValidateForm (phoneNumber) {
     if (this instanceof ValidateForm === false) {
         return new ValidateForm(phoneNumber)
