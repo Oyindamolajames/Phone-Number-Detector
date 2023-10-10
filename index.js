@@ -19,7 +19,8 @@ inputValue.addEventListener('keyup', () => {
     const errorMessage = document.querySelector('.error-message');
     if (validatePhoneNumber(phoneNumber)){
         let carrier = checkCarrier(phoneNumber);
-        let logo = carrierLogo[carrier];
+        if (carrier) {
+          let logo = carrierLogo[carrier];
         const imageElement = document.createElement('img');
         imageElement.src = logo;
         imageElement.alt = carrier + ' logo';
@@ -33,6 +34,10 @@ inputValue.addEventListener('keyup', () => {
         // hide error message
         errorMessage.textContent = ""
         console.log('worked')
+        } else {
+          errorMessage.textContent = "Carrier not found with that number"
+        }
+        
     } else {
       if (image) {
         imageBg.removeChild(image)    
@@ -79,5 +84,6 @@ function checkCarrier (phoneNumber) {
   } else if (numberObj.isNineMobileNumber()) {
     return '9mobile'
   }
+  return ''
 }
   
