@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telecoms carrier Detector</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecoms carrier Detector</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <form action="">
-            <label for="number">Phone Number</label>
-            <input type="text" id="number" name="number" placeholder="Enter a valid phone number">
+  <nav>
+    <h1>
+      <span>NP</span>checker
+    </h1>
+    <section class="link-holder">
+      <a href="/Project">Project</a>
+      <a href="/Project">Project</a>
+      <a href="/document">Document</a>
+      <a href="/About"></a>
+    </section>
+  </nav>
+  <div class="container">
 
-            <input type="submit" value="Check carrier">
-        </form>
-        <div class="carrier"></div>
-    </div>
+    <section class="form-component">
+      <div class="input-holder">
+        <label for="number">
+          Phone Number:
+        </label>
+        <div class="number-and-carrier">
+          <input 
+          type="tel" 
+          id="number" 
+          name="number" 
+          required 
+          placeholder="+2348053000000">
+          <div class="carrier-logo"></div>
+        </div>
+        
+      </div>
+      <p class="error-message"></p>
+      
 
-    <script src="index.js"></script>
+    </section>
+    <div class="carrier"></div>
+  </div>
+  <footer>
+    <p>
+      &COPY; Group I 2023. All Rights Reserved.
+      powered by devCareer and TheAltSchool @ <span> Tutor </span>
+    </p>
+
+  </footer>
+
+  <script type='module' src="index.js"></script>
+  <script type="module" src="validate.js"></script>
 </body>
+
 </html>
