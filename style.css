@@ -135,7 +135,6 @@ div.number-and-carrier {
   display: grid;
   grid-template-columns: 10rem 3rem;
   border: 1px solid grey;
-
 }
 
 .carrier-logo {
@@ -152,29 +151,27 @@ div.number-and-carrier {
   border-radius: 5px;
 } 
 
+.input-holder>label {
+  
+  text-align: center;
+  color: #000000;
+}
 
 
-  .input-holder>label {
-    
-    text-align: center;
-    color: #000000;
-  }
-  
-  
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    text-align: center;
-  }
-  
-  footer>p {
-    color: #fff;
-    font-size: 0.8rem;
-  }
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 4rem;
+  text-align: center;
+}
+
+footer>p {
+  color: #fff;
+  font-size: 0.8rem;
+}
   
 .error-message {
   color: rgb(240, 66, 66)
