@@ -141,7 +141,7 @@ div.number-and-carrier {
 .carrier-logo {
   max-height: 100%;
   border: 1px solid grey;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0.6rem
 }
 
@@ -149,6 +149,7 @@ div.number-and-carrier {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  border-radius: 5px;
 } 
 
 
