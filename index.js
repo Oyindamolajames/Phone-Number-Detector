@@ -2,15 +2,17 @@
 import {ValidateForm} from './validate.js'
 
 // select the container object
-let imageBg = document.querySelector(".container");
+let imageBg = document.querySelector(".carrier-logo");
 // What is input value?
 let inputValue = document.querySelector("#number");
 let submitBtn = document.querySelector('button')
 console.log(submitBtn)
 let carrierLogo = {
-    'mtn': 'url(https://seeklogo.com/images/M/MTN-logo-459AAF9482-seeklogo.com.png)',
-     
-}
+    'mtn': 'https://seeklogo.com/images/M/MTN-logo-459AAF9482-seeklogo.com.png',
+    'glo': 'https://seeklogo.com/images/G/glo-limited-logo-9D0F432BA3-seeklogo.com.png',
+    'airtel': 'https://seeklogo.com/images/A/airtel-logo-439F62AEA0-seeklogo.com.png',
+    '9mobile': 'https://seeklogo.com/images/1/9mobile-logo-2A74C402E2-seeklogo.com.png'
+  }
 
 submitBtn.addEventListener('click', () => {
     const phoneNumber = document.getElementById('number').value;
@@ -18,7 +20,10 @@ submitBtn.addEventListener('click', () => {
     if (validatePhoneNumber(phoneNumber)){
         let carrier = checkCarrier(phoneNumber);
         let logo = carrierLogo[carrier];
-        imageBg.style.backgroundImage = logo;
+        const imageElement = document.createElement('img');
+        imageElement.src = logo;
+        imageElement.alt = carrier + ' logo';
+        imageBg.appendChild(imageElement)
         console.log('worked')
     } else {
         console.log("didn't work")
@@ -50,18 +55,15 @@ function checkCarrier (phoneNumber) {
   const numberObj = new ValidateForm(phoneNumber);
 
   if (numberObj.isMtnNumber()) {
-    
+    return 'mtn';
 
-    return 'mtn'
   } else if (numberObj.isGloNumber()) {
-    imageBg.style.backgroundImage = 'url(https://seeklogo.com/images/G/glo-limited-logo-9D0F432BA3-seeklogo.com.png)'
-    return 'glo'
+    return 'glo';
+
   } else if (numberObj.isAirtelNumber()) {
-    
-  imageBg.style.backgroundImage = 'url(https://seeklogo.com/images/A/airtel-logo-439F62AEA0-seeklogo.com.png)'
     return 'airtel'
+
   } else if (numberObj.isNineMobileNumber()) {
-    imageBg.style.backgroundImage = 'url(https://seeklogo.com/images/1/9mobile-logo-2A74C402E2-seeklogo.com.png)'
     return '9mobile'
   }
 }

@@ -118,8 +118,26 @@
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+.carrier-logo {
+  width: 30px;
+  height: 30px;
+  border: 1px solid blue
+  
+}
+
+.carrier-logo > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+} 
+
+
+
   .input-holder>label {
     font-style: normal;
     font-weight: normal;
