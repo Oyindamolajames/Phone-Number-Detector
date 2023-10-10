@@ -1,9 +1,10 @@
 // 
 export function ValidateForm (phoneNumber) {
+    
     if (this instanceof ValidateForm === false) {
         return new ValidateForm(phoneNumber)
     }
-    this.phoneNumber = phoneNumber;
+    this.phoneNumber = `${phoneNumber}`;
     const prefixes = {
         mtn: ['803', 
         '806', 
@@ -60,17 +61,22 @@ ValidateForm.prototype.getPhoneNumber = function () {
 
 ValidateForm.prototype.isNumberComplete = function () {
     // function verifies if number is complete
-    if (this.phoneNumber.includes('+')) {
-        let slice = this.phoneNumber.slice(4);
+    let num = this.phoneNumber
+    if (num.includes('+')) {
+        let slice = num.slice(4);
         if (slice.length === 10) {
             return true
         } else {
             return false
         }
-    } else{
-        if (this.getPhoneNumber.length === 11) {
+    } else {
+        
+        if (num.length === 11) {
+            console.log("yeah")
             return true
         } else {
+            console.log(num .length)
+            console.log('bhgna')
             return false
         }
     }
@@ -112,7 +118,7 @@ ValidateForm.prototype.isNineMobileNumber = function () {
 ValidateForm.prototype.isAirtelNumber = function () {
       // this function check if this.phoneNumber is an airtel number by checking
         // against the prefixes
-        const gloPrefixes = this.getPrefixes().airtel;
+        const airtelPrefixes = this.getPrefixes().airtel;
         let numberPrefix = this.getPrefixFromPhoneNumber(this.phoneNumber);
         if (airtelPrefixes.includes(numberPrefix)) {
             return true
