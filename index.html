@@ -25,9 +25,10 @@
     <section class="form-component">
       <div class="input-holder">
         <label for="number">
-          Phone Number
+          Phone Number:
         </label>
-        <input 
+        <div class="number-and-carrier">
+          <input 
           type="tel" 
           id="number" 
           name="number" 
@@ -35,11 +36,12 @@
           
           placeholder="+2348053000000">
           <div class="carrier-logo"></div>
+        </div>
+        
       </div>
 
       <!--pattern=" /^\+\d[2-4][0-9]{10}$/"-->
 
-      <button type="submit">Submit</button>
     </section>
     <div class="carrier"></div>
   </div>

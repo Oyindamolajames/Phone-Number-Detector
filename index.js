@@ -5,8 +5,7 @@ import {ValidateForm} from './validate.js'
 let imageBg = document.querySelector(".carrier-logo");
 // What is input value?
 let inputValue = document.querySelector("#number");
-let submitBtn = document.querySelector('button')
-console.log(submitBtn)
+
 let carrierLogo = {
     'mtn': 'https://seeklogo.com/images/M/MTN-logo-459AAF9482-seeklogo.com.png',
     'glo': 'https://seeklogo.com/images/G/glo-limited-logo-9D0F432BA3-seeklogo.com.png',
@@ -14,19 +13,29 @@ let carrierLogo = {
     '9mobile': 'https://seeklogo.com/images/1/9mobile-logo-2A74C402E2-seeklogo.com.png'
   }
 
-submitBtn.addEventListener('click', () => {
+inputValue.addEventListener('keyup', () => {
     const phoneNumber = document.getElementById('number').value;
-    
+    const image = imageBg.querySelector('#logo');
     if (validatePhoneNumber(phoneNumber)){
         let carrier = checkCarrier(phoneNumber);
         let logo = carrierLogo[carrier];
         const imageElement = document.createElement('img');
         imageElement.src = logo;
         imageElement.alt = carrier + ' logo';
-        imageBg.appendChild(imageElement)
+        imageElement.id = 'logo'
+        // check if there is already a logo there
+        if (image) {
+          imageBg.replaceChild(imageElement, image)
+        }else {
+          imageBg.appendChild(imageElement)    
+        }
         console.log('worked')
     } else {
-        console.log("didn't work")
+      if (image) {
+        imageBg.removeChild(image)    
+      }
+        
+      console.log("didn't work")
     }
 })
 
