@@ -175,6 +175,10 @@ div.number-and-carrier {
     font-size: 0.8rem;
   }
   
+.error-message {
+  color: rgb(240, 66, 66)
+}
+
   @media(max-width: 765px) {
   
     nav {

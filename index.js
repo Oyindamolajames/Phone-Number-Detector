@@ -16,6 +16,7 @@ let carrierLogo = {
 inputValue.addEventListener('keyup', () => {
     const phoneNumber = document.getElementById('number').value;
     const image = imageBg.querySelector('#logo');
+    const errorMessage = document.querySelector('.error-message');
     if (validatePhoneNumber(phoneNumber)){
         let carrier = checkCarrier(phoneNumber);
         let logo = carrierLogo[carrier];
@@ -29,12 +30,15 @@ inputValue.addEventListener('keyup', () => {
         }else {
           imageBg.appendChild(imageElement)    
         }
+        // hide error message
+        errorMessage.textContent = ""
         console.log('worked')
     } else {
       if (image) {
         imageBg.removeChild(image)    
       }
-        
+
+      errorMessage.textContent = 'Invalid number'   
       console.log("didn't work")
     }
 })
