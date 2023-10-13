@@ -3,7 +3,6 @@
 A webapp that detects phone numbers in Nigeria.
 
 ## Table of Contents
-
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributors](#contributors)
