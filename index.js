@@ -151,6 +151,8 @@ document.getElementById("number").addEventListener("keyup", (e) => {
     headWord.textContent = " ";
     country.textContent = " ";
     direction.textContent = " ";
+    carrier.style.backgroundImage = "none";
+    detail.textContent = " ";
     inputValue.setAttribute("maxlength", 15);
   }
 });
